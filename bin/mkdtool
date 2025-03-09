@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# a shortcut to reload docker containers from nothing
+
+case "$1" in
+  "reload")
+    docker compose -f /home/$USERNAME/docker/docker-compose.yml up -d
+    ;;
+  "regenerate")
+    docker compose -f /home/$USERNAME/docker/docker-compose.yml up -d --pull always --build
+    ;;
+  "help")
+    echo "*MKDTool helper script*"
+    echo "-----------------------"
+    echo "usage: mkdtool <OPTION>"
+    echo "OPTION          PURPOSE"
+    echo "  reload        starts any stopped containers, and adds new ones if needed"
+    echo "  regenerate    same as reload, but pulls new versions for all containers"
+    echo "  help          shows this message"
+    ;;
+  *)
+    echo "Error: no option specified. use \"mkdtool help\" for a list of options."
+    exit 1
+    ;;
+esac
