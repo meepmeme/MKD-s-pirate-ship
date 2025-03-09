@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "----------------------------------------"
-echo "   \"MKD's pirate ship\" Install script   "
+echo "   \"MKD's Pirate Ship\" Install script   "
 echo "Created by your favorite minecraft admin"
 echo "----------------------------------------"
 echo ""
@@ -11,7 +11,7 @@ case "$choice" in
   n|N ) echo "Do you not trust me? After all this effort I put in to make this? Thats mean :("
         exit -1;;
   * ) echo "Invalid answer. Exiting for safety."
-      echo "Whats so hard about following instructions?"
+      echo "What's so hard about following instructions?"
       exit -1;;
 esac
 
