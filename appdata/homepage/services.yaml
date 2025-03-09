@@ -4,13 +4,13 @@
 
 - Docker Stack:
     - Portainer:
-        href: http://IP:9000/
+        href: http://IP:9000
         description: Manage running containers.
     - Jellyfin:
         href: http://IP:8096
         description: The server for your stuff.
     - Qbittorrent:
-        href: http://IP:8080/
+        href: http://IP:8080
         description: You know what this is.
         widgets:
           - type: qbittorrent

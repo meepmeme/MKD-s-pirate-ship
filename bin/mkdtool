@@ -9,6 +9,11 @@ case "$1" in
   "regenerate")
     docker compose -f /home/$USERNAME/docker/docker-compose.yml up -d --pull always --build
     ;;
+  "cleanup")
+    docker system prune
+    docker image prune
+    docker volume prune
+    ;;
   "help")
     echo "*MKDTool helper script*"
     echo "-----------------------"
@@ -16,6 +21,7 @@ case "$1" in
     echo "OPTION          PURPOSE"
     echo "  reload        starts any stopped containers, and adds new ones if needed"
     echo "  regenerate    same as reload, but pulls new versions for all containers"
+    echo "  cleanup       purge old images and unused data. if something breaks, run \"mkdtool reload\"."
     echo "  help          shows this message"
     ;;
   *)

@@ -1,4 +1,19 @@
 #!/bin/bash
+echo "----------------------------------------"
+echo "   \"MKD's pirate ship\" Install script   "
+echo "Created by your favorite minecraft admin"
+echo "----------------------------------------"
+echo ""
+echo "This is your last chance to back out of this. From here on, you are at the mercy of me and my subpar coding."
+read -p "Are you sure you want to do that? ([Y]es/[N]o) " choice
+case "$choice" in 
+  y|Y ) echo "Alrighty then. You were warned.";;
+  n|N ) echo "Do you not trust me? After all this effort I put in to make this? Thats mean :("
+        exit -1;;
+  * ) echo "Invalid answer. Exiting for safety."
+      echo "Whats so hard about following instructions?"
+      exit -1;;
+esac
 
 USERNAME=$(whoami)
 
@@ -41,3 +56,5 @@ sudo setfacl -Rdm u:$USERNAME:rwx /media
 sudo setfacl -Rm u:$USERNAME:rwx /media
 sudo setfacl -Rdm g:docker:rwx /media
 sudo setfacl -Rm g:docker:rwx /media
+
+echo "And just like that, the installation should be done. there's more to do of course, but this is a great start!"
