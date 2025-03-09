@@ -1,0 +1,28 @@
+# Gluetun - VPN Client for Docker Containers and More
+services:
+  gluetun:
+    image: qmcgaw/gluetun
+    container_name: gluetun
+    networks:
+      default:
+        ipv4_address: 172.18.0.35
+    extra_hosts:
+      - "postgres:172.18.0.36"
+    restart: always
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun
+    ports:
+      - "8080:8080" #qbittorrent
+    volumes:
+      - $DOCKERDIR/appdata/gluetun:/gluetun
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    environment:
+      TZ: $TZ
+      # Wireguard
+      VPN_SERVICE_PROVIDER: mullvad
+      VPN_TYPE: wireguard
+      WIREGUARD_PRIVATE_KEY: $WG_PRIVATE_KEY
+      WIREGUARD_ADDRESSES: $WG_IP
+      # SERVER_COUNTRIES: Netherlands

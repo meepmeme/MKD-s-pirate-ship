@@ -1,0 +1,12 @@
+## setup
+networks:
+  default:
+    driver: bridge
+
+include:
+  - compose/portainer.yml
+  - compose/samba.yml
+  - compose/gluetun.yml
+  - compose/jellyfin.yml
+  - compose/qbittorrent.yml
+  - compose/homepage.yml

@@ -1,0 +1,12 @@
+services:
+  samba:
+    image: dockurr/samba
+    container_name: samba
+    environment:
+      NAME: $SMB_NAME
+      USER: $SMB_USER
+      PASS: $SMB_PASS
+    ports:
+      - 445:445
+    volumes:
+      - $DATADIR:/storage

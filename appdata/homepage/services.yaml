@@ -1,0 +1,20 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/services/
+
+- Docker Stack:
+    - Portainer:
+        href: http://IP:9000/
+        description: Manage running containers.
+    - Jellyfin:
+        href: http://IP:8096
+        description: The server for your stuff.
+    - Qbittorrent:
+        href: http://IP:8080/
+        description: You know what this is.
+        widgets:
+          - type: qbittorrent
+            url: http://IP:8080
+            username: admin
+            password: password
+            enableLeechProgress: true # optional, defaults to false
